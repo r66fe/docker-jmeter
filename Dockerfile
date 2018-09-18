@@ -35,7 +35,6 @@ RUN    apk update \
 RUN curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-dummy/0.2/jmeter-plugins-dummy-0.2.jar -o ${JMETER_PLUGINS_FOLDER}/jmeter-plugins-dummy-0.2.jar
 RUN curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-cmn-jmeter/0.5/jmeter-plugins-cmn-jmeter-0.5.jar -o ${JMETER_PLUGINS_FOLDER}/jmeter-plugins-cmn-jmeter-0.5.jar
 RUN curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-extras/1.4.0/jmeter-plugins-extras-1.4.0.jar -o ${JMETER_PLUGINS_FOLDER}/ApacheJMeter_jdbc.jar
-RUN curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-manager/1.3/jmeter-plugins-manager-1.3.jar -o ${JMETER_PLUGINS_FOLDER}/jmeter-plugins-manager-1.3.jar
 RUN curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-standard/1.4.0/jmeter-plugins-standard-1.4.0.jar -o ${JMETER_PLUGINS_FOLDER}/jmeter-plugins-standard-1.4.0.jar
 
 ENV PATH $PATH:$JMETER_BIN
