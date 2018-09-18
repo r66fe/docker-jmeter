@@ -9,7 +9,7 @@ ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
 ENV	JMETER_BIN	${JMETER_HOME}/bin
 ENV	JMETER_DOWNLOAD_URL  http://mirrors.ocf.berkeley.edu/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
 ENV JMETER_PLUGINS_DOWNLOAD_URL http://repo1.maven.org/maven2/kg/apc
-ENV JMETER_PLUGINS_FOLDER ${JMETER_HOME}/lib/ext/
+ENV JMETER_PLUGINS_FOLDER ${JMETER_HOME}/lib/ext
 
 # Install extra packages
 # See https://github.com/gliderlabs/docker-alpine/issues/136#issuecomment-272703023
@@ -29,7 +29,7 @@ RUN    apk update \
 	&& curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-dummy/0.2/jmeter-plugins-dummy-0.2.jar -o ${JMETER_PLUGINS_FOLDER}/jmeter-plugins-dummy-0.2.jar \
 	&& curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-cmn-jmeter/0.5/jmeter-plugins-cmn-jmeter-0.5.jar -o ${JMETER_PLUGINS_FOLDER}/jmeter-plugins-cmn-jmeter-0.5.jar \
 	&& curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-standard/1.4.0/jmeter-plugins-standard-1.4.0.jar -o ${JMETER_PLUGINS_FOLDER}/jmeter-plugins-standard-1.4.0.jar \
-	&& curl -L --silent ${JMETER_PLUGINS_DOWNLOAD_URL}/jmeter-plugins-extras/1.4.0/jmeter-plugins-extras-1.4.0.jar -o ${JMETER_PLUGINS_FOLDER}/ApacheJMeter_jdbc.jar
+	&& curl -L --silent http://www.datanucleus.org/downloads/maven2/oracle/ojdbc6/11.2.0.3/ojdbc6-11.2.0.3.jar -o ${JMETER_HOME}/lib/ojdbc6.jar 
 
 
 # TODO: plugins (later)
