@@ -13,9 +13,7 @@ export JVM_ARGS="-Xmn${n}m -Xms${s}m -Xmx${x}m"
 
 echo "START Running Jmeter on `date`"
 echo "JVM_ARGS=${JVM_ARGS}"
-echo "jmeter args=-n \
-    -t "/tests/1.jmx" \
-    -l "/tests/log_1.jtl""
+echo "jmeter args=$@"
 
 # Keep entrypoint simple: we must pass the standard JMeter arguments
 jmeter $@
